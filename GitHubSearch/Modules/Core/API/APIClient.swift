@@ -44,7 +44,7 @@ final class GitHubAPIClient: APIClient {
         ])
         return searchRepositories(resource: resource,
                                   headers: APIConstants.headers,
-                                  auth: .bearer(token: "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"))
+                                  auth: .bearer(token: GitHubSearchKeys.Global().gitHubToken))
     }
 }
 

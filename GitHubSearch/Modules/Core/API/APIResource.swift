@@ -13,6 +13,10 @@ enum APIConstants {
         "Accept": "application/vnd.github+json",
         "X-GitHub-Api-Version": "2022-11-28"
     ]
+
+    enum Paths: String {
+        case searchRepositories = "/search/repositories"
+    }
 }
 
 protocol APIResource {
@@ -40,7 +44,7 @@ extension APIResource {
 
 struct SearchRepositoriesAPIResource: APIResource {
     var path: String? {
-        "/search/repositories"
+        APIConstants.Paths.searchRepositories.rawValue
     }
 
     var queryItems: [URLQueryItem]

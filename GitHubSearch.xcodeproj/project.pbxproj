@@ -44,9 +44,6 @@
 		7115FBF929B7D1B000966A30 /* RepositorySearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115FBF829B7D1B000966A30 /* RepositorySearchResponse.swift */; };
 		7115FBFA29B7D1B000966A30 /* RepositorySearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115FBF829B7D1B000966A30 /* RepositorySearchResponse.swift */; };
 		7115FBFB29B7D1B000966A30 /* RepositorySearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115FBF829B7D1B000966A30 /* RepositorySearchResponse.swift */; };
-		7115FBFE29B7D40500966A30 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115FBFD29B7D40500966A30 /* APIError.swift */; };
-		7115FBFF29B7D40500966A30 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115FBFD29B7D40500966A30 /* APIError.swift */; };
-		7115FC0029B7D40500966A30 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115FBFD29B7D40500966A30 /* APIError.swift */; };
 		7115FC0229B7D4DA00966A30 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115FC0129B7D4DA00966A30 /* APIResource.swift */; };
 		7115FC0329B7D4DA00966A30 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115FC0129B7D4DA00966A30 /* APIResource.swift */; };
 		7115FC0429B7D4DA00966A30 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115FC0129B7D4DA00966A30 /* APIResource.swift */; };
@@ -114,7 +111,6 @@
 		7115FBF029B7D16700966A30 /* RepositoryLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryLicense.swift; sourceTree = "<group>"; };
 		7115FBF429B7D19500966A30 /* RepositorySearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchItem.swift; sourceTree = "<group>"; };
 		7115FBF829B7D1B000966A30 /* RepositorySearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchResponse.swift; sourceTree = "<group>"; };
-		7115FBFD29B7D40500966A30 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		7115FC0129B7D4DA00966A30 /* APIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResource.swift; sourceTree = "<group>"; };
 		7115FC0929B7D6AD00966A30 /* RequestPerforming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPerforming.swift; sourceTree = "<group>"; };
 		7115FC1129B801B600966A30 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -274,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				7115FC2F29B82D4400966A30 /* HTTPMethod.swift */,
-				7115FBFD29B7D40500966A30 /* APIError.swift */,
 				7115FC0129B7D4DA00966A30 /* APIResource.swift */,
 				7115FC0929B7D6AD00966A30 /* RequestPerforming.swift */,
 				7115FC2229B816B700966A30 /* APIClient.swift */,
@@ -453,7 +448,6 @@
 				7115FC1229B801B600966A30 /* SearchViewModel.swift in Sources */,
 				7115FBF129B7D16700966A30 /* RepositoryLicense.swift in Sources */,
 				238BEB6229B9659500A498F7 /* SearchItemValueView.swift in Sources */,
-				7115FBFE29B7D40500966A30 /* APIError.swift in Sources */,
 				238BEB6B29B9921B00A498F7 /* LoadingView.swift in Sources */,
 				238BEB6729B9670D00A498F7 /* RepositoryOwnerView.swift in Sources */,
 				7115FC4929B8503700966A30 /* GitHubSearchKeys.swift in Sources */,
@@ -484,7 +478,6 @@
 				7115FBE929B7C92500966A30 /* DetailView.swift in Sources */,
 				7115FC3129B82D4400966A30 /* HTTPMethod.swift in Sources */,
 				7115FC0329B7D4DA00966A30 /* APIResource.swift in Sources */,
-				7115FBFF29B7D40500966A30 /* APIError.swift in Sources */,
 				7115FC4A29B8503700966A30 /* GitHubSearchKeys.swift in Sources */,
 				238BEB6C29B9921B00A498F7 /* LoadingView.swift in Sources */,
 				238BEB5F29B954A000A498F7 /* SearchItemView.swift in Sources */,
@@ -508,7 +501,6 @@
 				7115FC1429B801B600966A30 /* SearchViewModel.swift in Sources */,
 				7115FBF329B7D16700966A30 /* RepositoryLicense.swift in Sources */,
 				238BEB6429B9659500A498F7 /* SearchItemValueView.swift in Sources */,
-				7115FC0029B7D40500966A30 /* APIError.swift in Sources */,
 				238BEB6D29B9921B00A498F7 /* LoadingView.swift in Sources */,
 				238BEB6929B9670D00A498F7 /* RepositoryOwnerView.swift in Sources */,
 				7115FC4B29B8503700966A30 /* GitHubSearchKeys.swift in Sources */,

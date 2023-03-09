@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SearchItemView: View {
-
     let item: RepositorySearchItem
 
     var body: some View {

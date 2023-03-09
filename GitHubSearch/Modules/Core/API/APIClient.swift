@@ -37,8 +37,7 @@ final class GitHubAPIClient: APIClient {
     func searchRepositories(query: String) -> AnyPublisher<[RepositorySearchItem]?, Never> {
         guard !query.isEmpty else { return Just([]).eraseToAnyPublisher() }
         let resource: SearchRepositoriesAPIResource = .init(queryItems: [
-            .init(name: "q", value: query),
-//            .init(name: "per_page", value: "1")
+            .init(name: "q", value: query)
         ])
         return searchRepositories(resource: resource,
                                   headers: APIConstants.headers,

@@ -23,8 +23,9 @@ struct SearchItemValueView: View {
     }
 }
 
-//struct SearchItemValueView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchItemValueView()
-//    }
-//}
+struct SearchItemValueView_Previews: PreviewProvider {
+    static var previews: some View {
+        let att = RepositorySearchItem.Attribute.stars
+        SearchItemValueView(image: att.image, value: "0")
+    }
+}

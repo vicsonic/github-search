@@ -17,7 +17,12 @@ protocol SearchViewModeling {
 
 final class SearchViewModel: SearchViewModeling, ObservableObject {
     @Published var query: String = ""
-    @Published var isSearching: Bool = false
+    @Published var isSearching: Bool = false {
+        didSet {
+            isEmpty = results.isEmpty && !query.isEmpty && !isSearching
+        }
+    }
+    @Published var isEmpty: Bool = false
     @Published var results: [RepositorySearchItem] = []
 
     var client: APIClient
@@ -27,17 +32,23 @@ final class SearchViewModel: SearchViewModeling, ObservableObject {
     init(client: APIClient) {
         self.client = client
         $query
-            .throttle(for: 1, scheduler: DispatchQueue.main, latest: true)
+            // Adjust throttling to fulfill the API rate limit
+            // Not the best experience, but we are limited by the key
+            // Ref: https://docs.github.com/en/rest/search?apiVersion=2022-11-28#rate-limit
+            .throttle(for: 2.01, scheduler: DispatchQueue.main, latest: true)
             .removeDuplicates()
-            .map { query -> AnyPublisher<[RepositorySearchItem], Never> in
+            .map { query -> AnyPublisher<[RepositorySearchItem]?, Never> in
                 self.isSearching = true
                 return self.client.searchRepositories(query: query)
             }
             .switchToLatest()
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { results in
+                defer { self.isSearching = false }
+                guard let results else {
+                    return
+                }
                 self.results = results
-                self.isSearching = false
             })
             .store(in: &cancellables)
     }

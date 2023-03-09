@@ -46,6 +46,29 @@ struct RepositorySearchItem: Decodable, Identifiable, Hashable {
 }
 
 extension RepositorySearchItem {
+    static let mock: Self = .init(id: UUID().hashValue,
+                                  name: "my repo",
+                                  fullName: nil,
+                                  owner: .init(id: UUID().hashValue,
+                                               login: "hackerman",
+                                               url: nil,
+                                               type: nil,
+                                               avatarURL: nil),
+                                  isPrivate: nil,
+                                  url: nil,
+                                  htmlURL: .init(string: "https://www.victorso.to"),
+                                  description: "my awesome repo",
+                                  isFork: nil,
+                                  isArchived: nil,
+                                  isDisabled: nil,
+                                  visibility: nil,
+                                  watchersCount: 5,
+                                  starsCount: 500,
+                                  language: "Swift",
+                                  license: nil)
+}
+
+extension RepositorySearchItem {
     enum Attribute: String, Comparable {
         static func < (lhs: RepositorySearchItem.Attribute, rhs: RepositorySearchItem.Attribute) -> Bool {
             lhs.rawValue < rhs.rawValue

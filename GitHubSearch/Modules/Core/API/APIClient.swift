@@ -13,14 +13,14 @@ enum APIAuth {
 }
 
 protocol APIClient {
-    func searchRepositories(query: String) -> AnyPublisher<[RepositorySearchItem], Never>
+    func searchRepositories(query: String) -> AnyPublisher<[RepositorySearchItem]?, Never>
 }
 
 fileprivate extension APIClient {
     func searchRepositories(resource: APIResource,
                             method: HTTPMethod = .get,
                             headers:[String: String]? = [:],
-                            auth: APIAuth? = nil) -> AnyPublisher<[RepositorySearchItem], Never> {
+                            auth: APIAuth? = nil) -> AnyPublisher<[RepositorySearchItem]?, Never> {
         guard let url = resource.url else {
             return Just([]).eraseToAnyPublisher()
         }
@@ -28,15 +28,13 @@ fileprivate extension APIClient {
         URLSessionRequestPerformer().perform(url: url, method: method, headers: headers, auth: auth)
         return publisher
             .map { $0.items }
-            .catch { error in
-                return Just([])
-            }
+            .catch { _ in return Just(nil) }
             .eraseToAnyPublisher()
     }
 }
 
 final class GitHubAPIClient: APIClient {
-    func searchRepositories(query: String) -> AnyPublisher<[RepositorySearchItem], Never> {
+    func searchRepositories(query: String) -> AnyPublisher<[RepositorySearchItem]?, Never> {
         guard !query.isEmpty else { return Just([]).eraseToAnyPublisher() }
         let resource: SearchRepositoriesAPIResource = .init(queryItems: [
             .init(name: "q", value: query),
@@ -49,8 +47,8 @@ final class GitHubAPIClient: APIClient {
 }
 
 final class MockAPIClient: APIClient {
-    func searchRepositories(query: String) -> AnyPublisher<[RepositorySearchItem], Never> {
-        guard !query.isEmpty else { return Just([]).eraseToAnyPublisher() }
+    func searchRepositories(query: String) -> AnyPublisher<[RepositorySearchItem]?, Never> {
+        guard !query.isEmpty else { return Just(nil).eraseToAnyPublisher() }
         return searchRepositories(resource: MockAPIResource())
     }
 }

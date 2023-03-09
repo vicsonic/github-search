@@ -29,7 +29,7 @@ struct SearchItemView: View {
                 ForEach(item.attributes.keys.sorted(), id:\.self) { key in
                     if let value = item.attributes[key] {
                         SearchItemValueView(image: key.image, value: value)
-                            .padding(5)
+                            .padding(.trailing)
                     }
                 }
             }
@@ -37,8 +37,8 @@ struct SearchItemView: View {
     }
 }
 
-//struct SearchItemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchItemView()
-//    }
-//}
+struct SearchItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchItemView(item: RepositorySearchItem.mock)
+    }
+}

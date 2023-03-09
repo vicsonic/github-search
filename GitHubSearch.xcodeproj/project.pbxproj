@@ -19,6 +19,9 @@
 		238BEB6B29B9921B00A498F7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238BEB6A29B9921B00A498F7 /* LoadingView.swift */; };
 		238BEB6C29B9921B00A498F7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238BEB6A29B9921B00A498F7 /* LoadingView.swift */; };
 		238BEB6D29B9921B00A498F7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238BEB6A29B9921B00A498F7 /* LoadingView.swift */; };
+		23AFC7BD29BA60F300E8710B /* MessageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AFC7BC29BA60F300E8710B /* MessageHeaderView.swift */; };
+		23AFC7BE29BA60F300E8710B /* MessageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AFC7BC29BA60F300E8710B /* MessageHeaderView.swift */; };
+		23AFC7BF29BA60F300E8710B /* MessageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AFC7BC29BA60F300E8710B /* MessageHeaderView.swift */; };
 		7115FBBA29B7C26000966A30 /* GitHubSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115FBB929B7C26000966A30 /* GitHubSearchApp.swift */; };
 		7115FBBC29B7C26000966A30 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115FBBB29B7C26000966A30 /* SearchView.swift */; };
 		7115FBBE29B7C26100966A30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7115FBBD29B7C26100966A30 /* Assets.xcassets */; };
@@ -95,6 +98,7 @@
 		238BEB6129B9659500A498F7 /* SearchItemValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemValueView.swift; sourceTree = "<group>"; };
 		238BEB6629B9670D00A498F7 /* RepositoryOwnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryOwnerView.swift; sourceTree = "<group>"; };
 		238BEB6A29B9921B00A498F7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		23AFC7BC29BA60F300E8710B /* MessageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHeaderView.swift; sourceTree = "<group>"; };
 		7115FBB629B7C26000966A30 /* GitHubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7115FBB929B7C26000966A30 /* GitHubSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchApp.swift; sourceTree = "<group>"; };
 		7115FBBB29B7C26000966A30 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				238BEB6129B9659500A498F7 /* SearchItemValueView.swift */,
 				238BEB6629B9670D00A498F7 /* RepositoryOwnerView.swift */,
 				238BEB6A29B9921B00A498F7 /* LoadingView.swift */,
+				23AFC7BC29BA60F300E8710B /* MessageHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -437,6 +442,7 @@
 			files = (
 				7115FBF529B7D19500966A30 /* RepositorySearchItem.swift in Sources */,
 				7115FC2C29B8295300966A30 /* IsPreview.swift in Sources */,
+				23AFC7BD29BA60F300E8710B /* MessageHeaderView.swift in Sources */,
 				7115FC3029B82D4400966A30 /* HTTPMethod.swift in Sources */,
 				7115FBBC29B7C26000966A30 /* SearchView.swift in Sources */,
 				7115FBE829B7C92500966A30 /* DetailView.swift in Sources */,
@@ -473,6 +479,7 @@
 				7115FC4729B8503700966A30 /* GitHubSearchKeysInterfaces.swift in Sources */,
 				7115FBEE29B7D14E00966A30 /* RepositoryOwner.swift in Sources */,
 				7115FC2429B816B700966A30 /* APIClient.swift in Sources */,
+				23AFC7BE29BA60F300E8710B /* MessageHeaderView.swift in Sources */,
 				7115FBF629B7D19500966A30 /* RepositorySearchItem.swift in Sources */,
 				7115FBE929B7C92500966A30 /* DetailView.swift in Sources */,
 				7115FC3129B82D4400966A30 /* HTTPMethod.swift in Sources */,
@@ -490,6 +497,7 @@
 			files = (
 				7115FBF729B7D19500966A30 /* RepositorySearchItem.swift in Sources */,
 				7115FC2E29B8295300966A30 /* IsPreview.swift in Sources */,
+				23AFC7BF29BA60F300E8710B /* MessageHeaderView.swift in Sources */,
 				7115FC3229B82D4400966A30 /* HTTPMethod.swift in Sources */,
 				7115FBD529B7C26100966A30 /* GitHubSearchUITests.swift in Sources */,
 				7115FBEA29B7C92500966A30 /* DetailView.swift in Sources */,

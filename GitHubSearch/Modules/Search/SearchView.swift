@@ -21,11 +21,16 @@ struct SearchView: View {
                         }
                     }
                 } header: {
-                    if viewModel.isSearching {
-                        LoadingView()
-                            .frame(height: 50)
-                            .listRowBackground(Color.clear)
-                            .id(UUID())
+                    VStack(alignment: .center) {
+                        if viewModel.isSearching {
+                            LoadingView()
+                                .frame(height: 50)
+                                .listRowBackground(Color.clear)
+                                .id(UUID())
+                        }
+                        if viewModel.isEmpty {
+                            MessageHeaderView(message: "No results")
+                        }
                     }
                 }
             }

@@ -32,8 +32,11 @@ struct RepositoryOwnerView: View {
     }
 }
 
-//struct RepositoryOwnerView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RepositoryOwnerView()
-//    }
-//}
+struct RepositoryOwnerView_Previews: PreviewProvider {
+    static var previews: some View {
+        let mock = RepositorySearchItem.mock
+        RepositoryOwnerView(name: mock.owner?.login ?? "Name",
+                            url: mock.owner?.url,
+                            size: 25)
+    }
+}

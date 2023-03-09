@@ -14,9 +14,18 @@ struct SearchView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(viewModel.results) { result in
-                    NavigationLink(value: result) {
-                        SearchItemView(item: result)
+                Section {
+                    ForEach(viewModel.results) { result in
+                        NavigationLink(value: result) {
+                            SearchItemView(item: result)
+                        }
+                    }
+                } header: {
+                    if viewModel.isSearching {
+                        LoadingView()
+                            .frame(height: 50)
+                            .listRowBackground(Color.clear)
+                            .id(UUID())
                     }
                 }
             }

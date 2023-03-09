@@ -20,6 +20,9 @@ struct RepositorySearchItem: Decodable, Identifiable, Hashable {
     let isArchived: Bool?
     let isDisabled: Bool?
     let visibility: String?
+    let watchersCount: Int?
+    let starsCount: Int?
+    let language: String?
     let license: RepositoryLicense?
 
     private enum CodingKeys: String, CodingKey {
@@ -35,6 +38,48 @@ struct RepositorySearchItem: Decodable, Identifiable, Hashable {
         case isArchived = "archived"
         case isDisabled = "disabled"
         case visibility
+        case watchersCount = "watchers_count"
+        case starsCount = "stargazers_count"
+        case language
         case license
+    }
+}
+
+extension RepositorySearchItem {
+    enum Attribute: String, Comparable {
+        static func < (lhs: RepositorySearchItem.Attribute, rhs: RepositorySearchItem.Attribute) -> Bool {
+            lhs.rawValue < rhs.rawValue
+        }
+
+        case stars = "Stars Count"
+        case watchers = "Watchers Count"
+        case language = "Language"
+
+        var image: String {
+            let name: String
+            switch self {
+            case .stars:
+                name = "star"
+            case .watchers:
+                name = "eye"
+            case .language:
+                name = "keyboard"
+            }
+            return name
+        }
+    }
+
+    var attributes: [Attribute: String] {
+        var att: [Attribute: String] = [:]
+        if let starsCount {
+            att[.stars] = "\(starsCount)"
+        }
+        if let watchersCount {
+            att[.watchers] = "\(watchersCount)"
+        }
+        if let language {
+            att[.language] = language
+        }
+        return att
     }
 }

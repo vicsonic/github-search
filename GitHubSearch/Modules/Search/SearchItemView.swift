@@ -1,33 +1,29 @@
 //
-//  DetailView.swift
+//  SearchItemView.swift
 //  GitHubSearch
 //
-//  Created by Victor Soto on 07/03/23.
+//  Created by Victor Erik Soto Martinez on 08/03/23.
 //
 
 import SwiftUI
 
-struct DetailView: View {
+struct SearchItemView: View {
+
     let item: RepositorySearchItem
 
     var body: some View {
         VStack(alignment: .leading) {
             if let ownerName = item.owner?.login {
-                RepositoryOwnerView(name: ownerName,
-                                    url: item.owner?.avatarURL,
-                                    size: 35)
-                .padding(5)
+                Text(ownerName)
+                    .font(.caption)
+            }
+            if let name = item.name {
+                Text(name)
+                    .font(.headline)
             }
             if let description = item.description {
                 Text(description)
                     .font(.subheadline)
-                    .padding(5)
-            }
-            if let url = item.htmlURL ?? item.url {
-                Link(url.absoluteString, destination: url)
-                    .font(.caption)
-                    .fontWeight(.medium)
-                    .padding(5)
             }
             HStack {
                 ForEach(item.attributes.keys.sorted(), id:\.self) { key in
@@ -37,14 +33,12 @@ struct DetailView: View {
                     }
                 }
             }
-            Spacer()
         }
-        .navigationTitle(item.name ?? "Search Result")
     }
 }
 
-//struct DetailView_Previews: PreviewProvider {
+//struct SearchItemView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        DetailView(result: SearchResult.mock)
+//        SearchItemView()
 //    }
 //}

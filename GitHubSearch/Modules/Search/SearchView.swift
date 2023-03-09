@@ -16,7 +16,7 @@ struct SearchView: View {
             List {
                 ForEach(viewModel.results) { result in
                     NavigationLink(value: result) {
-                        Text(result.name ?? "no name")
+                        SearchItemView(item: result)
                     }
                 }
             }
@@ -26,6 +26,7 @@ struct SearchView: View {
             .navigationTitle("GitHub Search")
             .listStyle(.insetGrouped)
             .searchable(text: $viewModel.query, prompt: "Search repositories")
+            .autocorrectionDisabled()
 #if DEBUG
             .onAppear {
                 if GitHubSearchApp.isPreview {
